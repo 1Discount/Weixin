@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.spring.io/libs-milestone" }
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+	compile("org.springframework:spring-context:5.0.0.M1")
+	compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+	compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.9'
+	
+}
+
+jar {
+    baseName = 'Weixin-common'
+    version =  '0.0.1-SNAPSHOT'
+}
+
